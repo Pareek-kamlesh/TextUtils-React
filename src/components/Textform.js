@@ -51,26 +51,28 @@ export default function Textform(props) {
           ></textarea>
         </div>
         
-        <button className="btn btn-primary mx-1" onClick={upclicked}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={upclicked}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={loclicked}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={loclicked}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={clearclicked}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={clearclicked}>
           Clear all
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
         handleCopy
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>
         handleExtraSpaces
         </button>
       </div>
       <div className="container my-3" style={{color: props.mode==='light'?'black':'white',
     }}>
         <h2>Text summary</h2>
-        <p>{text.split(" ").length} words</p>
+        <p>{text.split(" ").filter((element)=>{
+          return element.length!==0
+        }).length} words</p>
         <p>{text.length} characters</p>
         <h3>Text preview</h3>
         <p>{text.length>0?text:"Enter your text"}</p>
