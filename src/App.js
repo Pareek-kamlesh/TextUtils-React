@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
+
 // import About from './components/About';
 // import {
 //   BrowserRouter,
@@ -13,6 +14,7 @@ import Alert from './components/Alert';
 
 
 function App() {
+  
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null);
 
